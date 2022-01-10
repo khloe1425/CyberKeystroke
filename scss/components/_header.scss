@@ -1,0 +1,433 @@
+// HEADER:
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  transition: all 0.4s ease-in-out;
+  background-color: transparent;
+  height: $sp-22;
+  @include Flex-center;
+
+  //add class active when scrolled down (see index.js)
+  &.active {
+    background-color: var(--bg-sub);
+    box-shadow: 0 1px 5px $c8;
+  }
+
+  .container {
+    margin: 0 auto;
+    padding: 0 $sp-4;
+
+    opacity: 1;
+    background-color: transparent;
+    transition: all 0.5s ease-out;
+
+    .navbar {
+      height: $sp-28;
+      background-color: transparent;
+
+      .navbar-brand {
+        line-height: $sp-28;
+        img {
+          width: 80%;
+        }
+      }
+
+      ul {
+        li {
+          &:hover .dropdown__content {
+            height: auto;
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+          }
+
+          a.nav-link {
+            position: relative;
+            font-weight: $font-medium;
+            color: var(--color-heading);
+            transition: all 0.2s;
+            &:hover {
+              color: $c3;
+            }
+          }
+
+          .dropdown__content {
+            transform: translateY(20%);
+            visibility: hidden;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s;
+
+            padding-bottom: $sp-3;
+            min-width: $sp-52;
+            width: $sp-56;
+            padding: $sp-5 $sp-3;
+            position: absolute;
+            top: 80%;
+            background-color: $c0;
+            box-shadow: 0px 5px 10px rgb(180, 179, 179);
+
+            .dropdown__item {
+              display: block;
+              margin: $sp-3;
+              color: var(--color-heading);
+              font-weight: $font-medium;
+              text-decoration: none;
+              &:hover {
+                color: $c3;
+              }
+            }
+          }
+        }
+      }
+
+      i.fa-search {
+        cursor: pointer;
+        color: var(--color-heading);
+      }
+      .bars {
+        background-color: white;
+        height: $sp-12;
+        width: $sp-12;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+  .nav__overlay,
+  .nav__overlay__responsive {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(49, 45, 45, 0.3);
+    display: none;
+    animation: Fadein linear 0.2s;
+  }
+  .nav__input:checked ~ .nav__overlay {
+    display: block;
+  }
+
+  .nav__input:checked ~ .vertical__nav {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .vertical__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 55%;
+    max-width: 100%;
+    background-color: var(--bg-main);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all linear 0.4s;
+
+    .vertical__nav__content {
+      max-width: 80%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .vertical__content-1 {
+        cursor: pointer;
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 20px;
+      }
+      .vertical__nav__content-2 {
+        display: block;
+        margin: 100px 0;
+
+        .vertical__search {
+          position: relative;
+          input {
+            background-color: var(--bg-main);
+            width: 100%;
+            height: $sp-10;
+            border: none;
+            border-bottom: 1px solid $c0-200;
+            outline: none;
+
+            &::placeholder,
+            &:focus {
+              font-size: $text-lg;
+              font-weight: $font-light;
+              color: var(--color-p);
+            }
+          }
+        }
+        i {
+          cursor: pointer;
+          position: absolute;
+          right: 0;
+          bottom: 25%;
+          color: $c0-200;
+          z-index: 100;
+        }
+      }
+      .vertical__nav__info {
+        margin-top: $sp-16;
+        @include Grid(1fr 1fr);
+
+        ul {
+          list-style: none;
+          li > a {
+            color: var(--color-heading);
+            font-size: $text-lg;
+            text-decoration: none;
+            &:hover {
+              color: $c3;
+            }
+          }
+        }
+
+        .contact__info {
+          > h4 {
+            color: var(--color-heading);
+            font-size: $text-nmd;
+            margin-top: $sp-6;
+          }
+          > p {
+            margin-bottom: 0;
+            color: $c9;
+            font-weight: $font-light;
+          }
+
+          .icons__heading {
+            width: 50%;
+            display: flex;
+            margin-top: $sp-3;
+
+            > i {
+              color: $c0;
+              font-size: $text-sm;
+              @include Flex-center;
+              width: 40px;
+              height: 40px;
+              background-color: $c2-800;
+              text-align: center;
+              padding: 0 20px;
+              margin-right: 10px;
+              border-radius: 50%;
+              transition: all 0.3s ease;
+
+              &:hover {
+                background-color: $c3;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .search__section {
+    height: 100%;
+    width: 100%;
+    background-color: $c0;
+    display: none;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+
+    &.active {
+      background-color: $c0;
+      box-shadow: 0 1px 5px $c8;
+    }
+
+    .search__content {
+      height: 100%;
+      width: 100%;
+      @include Flex-center;
+
+      .inner__wrap {
+        width: 100%;
+        .search__content__input {
+          transform: translateX(15%);
+          width: 100%;
+          input {
+            width: 70%;
+            border: none;
+            border-bottom: 1px solid $c0-200;
+            position: relative;
+            outline: none;
+          }
+          > i {
+            cursor: pointer;
+            position: absolute;
+            right: 30.5%;
+            bottom: 5px;
+            color: $c0-200;
+            z-index: 100;
+          }
+        }
+      }
+      .search__content__close {
+        margin-right: 10px;
+        z-index: 300;
+
+        button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          &:hover i {
+            color: $c3;
+          }
+        }
+      }
+    }
+  }
+
+  .vertical__nav__responsive {
+    display: none;
+  }
+
+  @media screen and (max-width: 992px) {
+    padding: 0;
+    .container {
+      max-width: 100% !important;
+      height: auto;
+      .navbar {
+        padding: 0;
+        height: 100%;
+        .responsive__header {
+          //nút search và bars
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          
+        }
+      }
+    }
+    .nav__input__responsive:checked ~ .nav__overlay__responsive {
+      display: block;
+    }
+    .nav__input__responsive:checked ~ .vertical__nav__responsive {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    .vertical__nav__responsive {
+      padding: 0;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 55%;
+      max-width: 100%;
+      background-color: black;
+      transform: translateX(-100%);
+      opacity: 0;
+      transition: all linear 0.4s;
+
+      .vertical__nav__content__responsive {
+        .vertical__nav__content__responsive-2 {
+          ul {
+            list-style: none;
+            width: 100%;
+
+            li {
+              border-bottom: 1px solid $c0-700;
+              width: 100%;
+
+              label {
+                @include label(10px 0 10px 10px);
+                transition: all 0.3s ease;
+              }
+
+              .heading__drop {
+                @include flex (space-between, center);
+
+                i {
+                  color: $c0;
+                  padding-right: 20px;
+                  font-size: $text-nmd;
+                  &:hover {
+                    color: $c3;
+                  }
+                }
+
+                label.up {
+                  display: none;
+                }
+              }
+              .dropdown__content {
+                display: none;
+                transition: all 0.3s;
+                padding: 0 10px 10px 30px;
+                transition: all 0.3s ease;
+                animation: Fadein linear 0.2s;
+
+                a.dropdown__item {
+                 @include label(5px 0);
+                  &:hover {
+                    color: $c3;
+                  }
+                }
+              }
+
+              #showHome:checked ~ .dropdown__content,
+              #showServices:checked ~ .dropdown__content,
+              #showBlog:checked ~ .dropdown__content,
+              #showPages:checked ~ .dropdown__content {
+                display: block;
+              }
+
+              //up-down button  - responsive left vertical nav
+              #showHome:checked ~ .heading__drop .up,
+              #showServices:checked ~ .heading__drop .up,
+              #showBlog:checked ~ .heading__drop .up,
+              #showPages:checked ~ .heading__drop .up {
+                display: block !important;
+              }
+
+              #showHome:checked ~ .heading__drop .down,
+              #showServices:checked ~ .heading__drop .down,
+              #showBlog:checked ~ .heading__drop .down,
+              #showPages:checked ~ .heading__drop .down {
+                display: none !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 577px) {
+    .container {
+      height: 100%;
+      .navbar {
+        padding: 0;
+        height: 100%;
+        .navbar-brand {
+          width: 60%;
+          height: 100%;
+          @include flex (space-between, center);
+        }
+      }
+    }
+
+    .vertical__nav__responsive {
+      .vertical__nav__content__responsive {
+        .vertical__nav__content__responsive-1 {
+          img {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+
+.toTop {
+    width: 50px;
+    height: 60px;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background-color: var(--bg-main);
+  
+    @include Flex-center;
+  
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+  
+
+    &.activea {
+      bottom: 32px;
+      pointer-events: auto;
+      opacity: 1;
+    }
+  
+    .top__content {
+      @include Flex-center;
+
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      color: var(--color-p);
+      cursor: pointer;
+  
+      &:hover {
+        transition: all 0.3s;
+        box-shadow: 5px 10px 30px rgba(105, 99, 99, 0.19);
+      }
+    }
+  }
+  

@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<!-- 1 -->
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+
+  <!-- awesome  -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous" />
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- animate -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- plugin css -->
+  <!-- <link rel="stylesheet" href="./cssplugin/plugin.css"> -->
+
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>SCSS KEYSTROKE</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header">
+
+    <div class="container" id="nav__content">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- logo -->
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="./img/keystroke-sass-img03.png" alt="" />
+        </a>
+
+        <!--RESPONSIVE SHOWUP ON HEADERS-->
+        <div class="responsive__header d-none">
+          <div id="search__icon" class="my-2 my-lg-0 mx-2" onclick="displaySearch()">
+            <i class="fa fa-search"></i>
+          </div>
+          <label for="responsive-input-checked" class="bars ml-4 mt-1">
+            <i class="fa fa-align-justify"></i>
+          </label>
+        </div>
+
+        <!-- NAVBAR -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mr-4">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+
+              <div class="dropdown__content">
+
+                <a class="dropdown__item" href="#">Digital Agency </a>
+                <a class="dropdown__item" href="#">Creative Agency </a>
+                <a class="dropdown__item" href="#">Personal Portfolio </a>
+                <a class="dropdown__item" href="#">Home Startup </a>
+                <a class="dropdown__item" href="#">Corporate Agency </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Services </a>
+                <a class="dropdown__item" href="#">Services Details</a>
+                <a class="dropdown__item" href="#">Services Two</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Blog List </a>
+                <a class="dropdown__item" href="#">Blog List Two </a>
+                <a class="dropdown__item" href="#">Blog List </a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pages</a>
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Typography </a>
+                <a class="dropdown__item" href="#">Testimonial </a>
+                <a class="dropdown__item" href="#">Portfolio< </a>
+                    <a class="dropdown__item" href="#">Portfolio Details </a>
+                    <a class="dropdown__item" href="#">Portfolio Details </a>
+                    <a class="dropdown__item" href="#">Pricing </a>
+                    <a class="dropdown__item" href="#">Services </a>
+                    <a class="dropdown__item" href="#">Team </a>
+                    <a class="dropdown__item" href="#">Comming Soon </a>
+                    <a class="dropdown__item" href="#">Case Study Details </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+
+          <div id="search__icon" class="my-2 my-lg-0 mx-2" onclick="displaySearch()">
+            <i class="fa fa-search"></i>
+          </div>
+          <!-- sd label để mở vertical nav -->
+          <label for="vertical-nav-input" class="bars ml-4 mt-1">
+            <i class="fa fa-align-justify"></i>
+          </label>
+        </div>
+      </nav>
+    </div>
+
+    <div class="search__section" id="search__here">
+      <div class="search__content">
+        <div class="inner__wrap">
+          <!-- ô search -->
+          <div class="search__content__input">
+            <input type="text" name="" id="search__input" placeholder="Search Here ..." />
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- close btn -->
+        <div class="search__content__close">
+          <button onclick="displayNav()"><i class="fa fa-times"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- check input: fải đứng trước overlay và vertical nav mới có thể trỏ css tới chúng -->
+    <input type="checkbox" hidden id="vertical-nav-input" class="nav__input" />
+    <!-- overlay -->
+    <label class="nav__overlay" for="vertical-nav-input"></label>
+
+    <!-- Vertical Nav -->
+    <div class="vertical__nav">
+      <div class="vertical__nav__content">
+        <!-- 1 -->
+        <label for="vertical-nav-input" class="vertical__content-1">
+          <i class="fa fa-times"></i>
+        </label>
+
+        <!-- 2 -->
+        <div class="vertical__nav__content-2">
+          <!-- ô search -->
+          <div class="vertical__search">
+            <input type="text" name="" id="search__input" placeholder="Search..." />
+            <i class="fa fa-search"></i>
+          </div>
+
+          <!-- nav info section -->
+          <div class="vertical__nav__info">
+            <ul>
+              <li>
+                <a href="#">Home One</a>
+              </li>
+              <li>
+                <a href="#">Home Two</a>
+              </li>
+              <li>
+                <a href="#">Home Three</a>
+              </li>
+              <li>
+                <a href="#">Home Four</a>
+              </li>
+              <li>
+                <a href="#">Home Five</a>
+              </li>
+              <li>
+                <a href="#">Home Six</a>
+              </li>
+            </ul>
+
+            <div class="contact__info">
+              <h4>Contact Information</h4>
+              <p>Theodore Lowe, Ap #867-859 Sit Rd, Azusa New York</p>
+              <h4>We're Available 24/ 7. Call Now.</h4>
+              <p>(888) 456-2790</p>
+              <p>(121) 255-53333</p>
+              <h4>Find us here</h4>
+              <div class="icons__heading">
+                <i class="fab fa-facebook-f "></i>
+                <i class="fab fa-twitter "></i>
+                <i class="fab fa-behance "></i>
+                <i class="fab fa-linkedin-in "></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- INPUT/ LABEL FOR RESPONSIVE OF BAR SHOWUP -->
+    <input type="checkbox" hidden id="responsive-input-checked" class="nav__input__responsive" />
+
+    <!-- responsive overlay -->
+    <label class="nav__overlay__responsive" for="responsive-input-checked"></label>
+
+    <!-- responsive left vertical nav -->
+    <div class="vertical__nav__responsive" style="overflow:scroll;">
+      <div class="vertical__nav__content__responsive">
+        <!-- 1. logo and close btn-->
+        <div
+          class="vertical__nav__content__responsive-1 bg-light d-flex justify-content-between align-items-center py-3">
+          <img src="./img/keystroke-sass-img03.png" alt="">
+          <label for="responsive-input-checked" class="mr-3 mt-2" role="button">
+            <i class="fa fa-times"></i>
+          </label>
+        </div>
+
+        <!-- 2 -->
+        <div class="vertical__nav__content__responsive-2 mt-3 ">
+          <ul class="navbar-nav ml-auto mr-4">
+            <li class="nav-item">
+              <input type="checkbox" id="showHome" hidden>
+              <div class="heading__drop">
+                <label for="showHome" class="nav-link" href="#">Home <span class="sr-only">(current)</span></label>
+                <label for="showHome" class="down"> <i class="fa fa-caret-down"></i></label>
+                <label for="showHome" class="up"> <i class="fa fa-caret-up"></i></label>
+
+              </div>
+
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Digital Agency </a>
+                <a class="dropdown__item" href="#">Creative Agency </a>
+                <a class="dropdown__item" href="#">Personal Portfolio </a>
+                <a class="dropdown__item" href="#">Home Startup </a>
+                <a class="dropdown__item" href="#">Corporate Agency </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <input type="checkbox" id="showServices" hidden>
+              <div class="heading__drop">
+                <label for="showServices" class="nav-link" href="#">Services</label>
+                <label for="showServices" class="down" href="#"><i class="fa fa-caret-down"></i></label>
+                <label for="showServices" class="up" href="#"><i class="fa fa-caret-up"></i></label>
+
+              </div>
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Services </a>
+                <a class="dropdown__item" href="#">Services Details</a>
+                <a class="dropdown__item" href="#">Services Two</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <label class="nav-link" href="#">About Us</label>
+            </li>
+
+            <li class="nav-item">
+              <input type="checkbox" id="showBlog" hidden>
+              <div class="heading__drop">
+                <label for="showBlog" class="nav-link" href="#">Blog</label>
+                <label for="showBlog" class="down" href="#"><i class="fa fa-caret-down"></i></label>
+                <label for="showBlog" class="up" href="#"><i class="fa fa-caret-up"></i></label>
+              </div>
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Blog List </a>
+                <a class="dropdown__item" href="#">Blog List Two </a>
+                <a class="dropdown__item" href="#">Blog List </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <input type="checkbox" id="showPages" hidden>
+              <div class="heading__drop">
+                <label for="showPages" class="nav-link" href="#">Pages</label>
+                <label for="showPages" class="down" href="#"><i class="fa fa-caret-down"></i></label>
+                <label for="showPages" class="up" href="#"><i class="fa fa-caret-up"></i></label>
+
+              </div>
+              <div class="dropdown__content">
+                <a class="dropdown__item" href="#">Typography </a>
+                <a class="dropdown__item" href="#">Testimonial </a>
+                <a class="dropdown__item" href="#">Portfolio< </a>
+                    <a class="dropdown__item" href="#">Portfolio Details </a>
+                    <a class="dropdown__item" href="#">Portfolio Details </a>
+                    <a class="dropdown__item" href="#">Pricing </a>
+                    <a class="dropdown__item" href="#">Services </a>
+                    <a class="dropdown__item" href="#">Team </a>
+                    <a class="dropdown__item" href="#">Comming Soon </a>
+                    <a class="dropdown__item" href="#">Case Study Details </a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <label class="nav-link" href="#">Contact</label>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- CAROUSEL -->
+  <section class="carousel-1" id="ex1">
+    <div class="container">
+
+      <div class="carousel__content__intro">
+        <div class="carousel__content__intro__text__wrap">
+          <div class="text__wrap">
+            <h1 class="animate__animated animate__slideInUp wow">Build stunning websites & apps</h1>
+            <p class="animate__animated animate__slideInUp wow">
+              Create live segments and target the right people for messages
+              based on their behaviors.
+            </p>
+          </div>
+
+          <div class="main__button">
+            <button class="first__button">
+              <span>View Showcase </span><span class="ml-4"><i class="fa
+                    fa-caret-right"></i></span>
+            </button>
+            <button class="second__button">
+              <span>View Showcase </span><span class="ml-4"><i class="fa
+                    fa-caret-right"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="image" data-tilt>
+        <div class="image__combine">
+          <div class="image-1">
+            <img src="./img/keystroke-sass-img04.jpg" alt="" />
+          </div>
+
+          <div class="image-2">
+            <img src="./img/keystroke-sass-img06.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+
+      <div class="icon-img-bg">
+        <div class="icon-img-bg-inner" id="ex1-layer">
+          <i class="icon icon-shape-04"></i>
+          <i class="icon icon-shape-05"></i>
+          <i class="icon icon-shape-06"></i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="container">
+      <div class="serivces__prewords">
+
+        <span>what we can do for you</span>
+
+        <h1 class="animate__animated animate__slideInUp wow">Services we can help you with</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          Nulla facilisi. Nullam in magna id dolor blandit rutrum eget
+          vulputate augue sed eu leo eget risus imperdiet.
+        </p>
+      </div>
+
+      <div class="services__list">
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-1"></div>
+                <div class="img__icon img__icon-1">
+                  <img src="./img/services1.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-2"></div>
+                <div class="img__icon img__icon-2">
+                  <img src="./img/services2.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-3"></div>
+                <div class="img__icon img__icon-3">
+                  <img src="./img/services3.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-4"></div>
+                <div class="img__icon img__icon-4">
+                  <img src="./img/services3.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-1"></div>
+                <div class="img__icon img__icon-5">
+                  <img src="./img/services2.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrap" data-tilt>
+          <div class="services__item">
+            <div class="item__icon">
+              <div class="item__icon__inner">
+                <div class="square square-4"></div>
+                <div class="img__icon img__icon-6">
+                  <img src="./img/services2.png" alt="" />
+                </div>
+              </div>
+            </div>
+
+            <h3>Online Marketing</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Praesentium velit
+            </p>
+            <div class="item__button">
+              <button>Learn more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY -->
+  <section class="casestudy">
+    <div class="container">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="inner__text">
+              <div class="casestudy__content__picture">
+                <img src="./img//keystroke-sass-casestudy.jpg" alt="" />
+              </div>
+
+              <div class="casestudy__content__info">
+                <span class="featured">featured case study</span>
+                <h1 class="animate__animated animate__slideInUp wow">Logo, identify & web design for Uber</h1>
+                <p class="animate__animated animate__slideInUp wow">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Culpa explicabo recusandae incidunt sit maxime, temporibus a
+                  nihil, obcaecati dolores omnis laudantium provident dolorem
+                  officiis? Ullam qui facilis deleniti dolor enim laboriosam
+                  placeat.
+                </p>
+                <!-- button -->
+                <div class="main__button">
+                  <button class="first__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                  <button class="second__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                </div>
+                <!-- số -->
+                <div class="statistic">
+                  <div class="firstNumber">
+                    <h4><span class="counter">15</span>%</h4>
+                    <p>ROI increase</p>
+                  </div>
+
+                  <div class="secondNumber">
+                    <h4><span class="counter">60</span>K</h4>
+                    <p>Monthly website visits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="inner__text">
+              <div class="casestudy__content__picture">
+                <img src="./img//keystroke-sass-casestudy2.jpg" alt="" />
+              </div>
+
+              <div class="casestudy__content__info">
+                <span class="featured">featured case study</span>
+                <h1>Logo, identify & web design for Uber</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Culpa explicabo recusandae incidunt sit maxime, temporibus a
+                  nihil, obcaecati dolores omnis laudantium provident dolorem
+                  officiis? Ullam qui facilis deleniti dolor enim laboriosam
+                  placeat.
+                </p>
+                <!-- button -->
+                <div class="main__button">
+                  <button class="first__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                  <button class="second__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                </div>
+                <!-- số -->
+                <div class="statistic">
+                  <div class="firstNumber">
+                    <h4><span class="counter">15</span>%</h4>
+                    <p>ROI increase</p>
+                  </div>
+
+                  <div class="secondNumber">
+                    <h4><span class="counter">60</span>K</h4>
+                    <p>Monthly website visits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="inner__text">
+              <div class="casestudy__content__picture">
+                <img class="case3" src="./img/keystroke-sass-casestudy3.jpg" alt="" />
+              </div>
+
+              <div class="casestudy__content__info">
+                <span class="featured">featured case study</span>
+                <h1>Logo, identify & web design for Uber</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Culpa explicabo recusandae incidunt sit maxime, temporibus a
+                  nihil, obcaecati dolores omnis laudantium provident dolorem
+                  officiis? Ullam qui facilis deleniti dolor enim laboriosam
+                  placeat.
+                </p>
+                <!-- button -->
+                <div class="main__button">
+                  <button class="first__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                  <button class="second__button">
+                    <span>Read Case Study</span><span class="ml-4"><i class="fa fa-caret-right"></i></span>
+                  </button>
+                </div>
+                <!-- số -->
+                <div class="statistic">
+                  <div class="firstNumber">
+                    <h4><span class="counter">15</span>%</h4>
+                    <p>ROI increase</p>
+                  </div>
+
+                  <div class="secondNumber">
+                    <h4><span class="counter">60</span>K</h4>
+                    <p>Monthly website visits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section class="about">
+    <div class="container">
+      <div class="about__content__item-1">
+        <span class="aboutUs">about us</span>
+        <h1 class="animate__animated animate__slideInUp wow">We do design, code & develop.</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          Nulla et velit gravida, facilisis quam a, molestie ante. Mauris
+          placerat suscipit dui, eget maximus tellus blandit a. Praesent non
+          tellus sed ligula commodo blandit in et mauris. Quisque efficitur
+          ipsum ut dolor molestie pellentesque. Nulla pharetra hendrerit mi
+          quis dapibus.
+        </p>
+        <p class="animate__animated animate__slideInUp wow">
+          Quisque luctus, tortor a venenatis fermentum, est lacus feugiat
+          nisl, id pharetra odio enim eget libero.
+        </p>
+      </div>
+
+      <div class="about__content__item-2">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        <form>
+          <h1>Get a free Keystroke quote now</h1>
+          <div class="formgroup">
+            <input type="text" placeholder="Name" />
+          </div>
+
+          <div class="formgroup">
+            <input type="email" class="formcontrol" placeholder="Email" />
+          </div>
+
+          <div class="formgroup">
+            <input type="text" class="formcontrol" placeholder="Company" />
+          </div>
+
+          <div class="formgroup">
+            <input type="text" class="formcontrol" placeholder="Phone" />
+          </div>
+          <!-- button -->
+
+          <div type="submit" class="main__button">
+            <button class="first__button">
+              <span>Get Pricing Now</span><span class="ml-4"><i class="fa
+                    fa-caret-right"></i></span>
+            </button>
+            <button class="second__button">
+              <span>Get Pricing Now</span><span class="ml-4"><i class="fa
+                    fa-caret-right"></i></span>
+            </button>
+          </div>
+
+
+          <p class="callus">
+            Or call us now <span><i class="fa fa-phone phone ml-3 mr-2"></i>(123)
+              456 7890</span></i>
+          </p>
+        </form>
+      </div>
+
+      <div class="icon-img-bg">
+        <div class="icon-img-bg-inner" id="ex1-layer">
+          <i class="icon icon-shape-04"></i>
+          <i class="icon icon-shape-05"></i>
+          <i class="icon icon-shape-06"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects">
+    <div class="container">
+      <div class="heading">
+        <h1>Some of our finest work</h1>
+        <ul class="nav nav-pills mb-3">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#all"><span>All</span></a>
+          </li>
+          <li class="nav-item brandings">
+            <a class="nav-link" data-toggle="pill" href="#branding">Branding</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#web">Web</a>
+          </li>
+          <li class="nav-item brandings">
+            <a class="nav-link" data-toggle="pill" href="#graphic">Graphic</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active " id="all">
+          <div class="rows">
+            <div class="col item--1 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+            <div class="col item--2 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img15.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+            <div class="col item--3 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img12.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--4 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img17.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--5 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img18.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--6 wow">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="branding">
+          <div class="rows">
+            <div class="col">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--1">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img17.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="web">
+          <div class="rows">
+            <div class="col item--1">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--2">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img15.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--3">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img17.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+
+            <div class="col item--4">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tab-pane fade" id="graphic">
+          <div class="rows">
+            <div class="col item--1">
+              <div class="item__wrap" data-tilt>
+                <div style="height: 376px; overflow: hidden;" class="projects__item">
+                  <img src="./img/keystroke-sass-img12.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+            <div class="col item--2">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img18.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+            <div class="col item--3">
+              <div class="item__wrap" data-tilt>
+                <div class="projects__item">
+                  <img src="./img/keystroke-sass-img14.jpg" alt="">
+                </div>
+              </div>
+              <div class="text">
+                <h3>Creative Agency</h3>
+                <p>
+                  ios, design
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- button -->
+      <div class="main__button">
+        <button class="first__button">
+          <span>Discover More Projects</span><span class="ml-4"><i class="fa
+              fa-caret-right"></i></span>
+        </button>
+        <button class="second__button">
+          <span>Discover More Projects</span><span class="ml-4"><i class="fa
+              fa-caret-right"></i></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTS -->
+  <section class="experts">
+    <div class="container">
+      <div class="experts__prewords">
+        <span>experts in field</span>
+        <h1 class="animate__animated animate__slideInUp wow">Design startup movement</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          In vel varius turpis, non dictum sem. Aenean in efficitur ipsum, in
+          egestas ipsum. Mauris in mi ac tellus.
+        </p>
+      </div>
+
+      <div class="experts__stats animate__animated animate__slideInUp wow">
+        <div class="experts__stats__item">
+          <div class="experts__stats__item__inner">
+            <div class="center_inner_stats">
+              <div class="icons">
+                <img src="./img/keystroke-sass-img19.png" alt="">
+              </div>
+              <h1><span class="counter">15</span>+</h1>
+              <p>Years of operation</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experts__stats__item">
+          <div class="experts__stats__item__inner inner-2">
+            <div class="center_inner_stats">
+              <div class="icons icon-2">
+                <img src="./img/keystroke-sass-img20.png" alt="">
+              </div>
+              <h1><span class="counter">360</span>+</h1>
+              <p>Projects deliverd</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experts__stats__item">
+          <div class="experts__stats__item__inner">
+            <div class="center_inner_stats">
+              <div class="icons icon-3">
+                <img src="./img/keystroke-sass-img21.png" alt="">
+              </div>
+              <h1><span class="counter">600</span>+</h1>
+              <p>Specialists</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="experts__stats__item">
+          <div class="experts__stats__item__inner inner-4">
+            <div class="center_inner_stats">
+              <div class="icons icon-4">
+                <img src="./img/keystroke-sass-img22.png" alt="">
+              </div>
+              <h1><span class="counter">64</span>+</h1>
+              <p>Years of operation</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="testimonials__prewords">
+        <span>testimonials</span>
+        <h1 class="animate__animated animate__slideInUp wow">From getting started</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          In vel varius turpis, non dictum sem. Aenean in efficitur ipsum, in
+          egestas ipsum. Mauris in mi ac tellus.
+        </p>
+      </div>
+
+      <div class="testimonials__opinions">
+
+        <div class="opinions">
+          <div class="opinions__inner">
+            <div class="opinions__name">
+
+              <div class="name">
+                <img src="./img/keystroke-sass-img23.jpg" alt="">
+                <div class="name__text">
+                  <h3>Martha Maldonado</h3>
+                  <p>Executive Chairman @ Google</p>
+                </div>
+              </div>
+
+              <i class="fa fa-quote-right"></i>
+            </div>
+
+            <p>Donec metus lorem, vulputate at sapien sit amet, auctor iacul islorem. In vel hend rerit nisi. Vestibulum
+              eget risus velit.</p>
+
+            <div class="item__button">
+              <button>Read Project Case Study</button>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="opinions">
+          <div class="opinions__inner">
+            <div class="opinions__name">
+
+              <div class="name">
+                <img src="./img/keystroke-sass-img24.jpg" alt="">
+                <div class="name__text">
+                  <h3>Martha Maldonado</h3>
+                  <p>Executive Chairman @ Google</p>
+                </div>
+              </div>
+
+              <i class="fa fa-quote-right"></i>
+            </div>
+
+            <p>Donec metus lorem, vulputate at sapien sit amet, auctor iacul islorem. In vel hend rerit nisi. Vestibulum
+              eget risus velit.</p>
+
+            <div class="item__button">
+              <button>Read Project Case Study</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="container">
+
+      <div class="team__content__item-1">
+
+        <div class="photo">
+          <img src="./img/keystroke-sass-img25.png" alt="">
+
+
+          <div class="twenty">
+            <div class="twenty__inner">
+              <div class="twenty__inner__number">
+                20+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="team__content__item-2">
+        <span class="featured">our team</span>
+        <h1 class="animate__animated animate__slideInUp wow">Alone we can do so little; together we can do so much.</h1>
+        <p class="animate__animated animate__slideInUp wow"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Ipsam provident vero laborum aut asperiores
+          voluptatem eveniet vitae.
+        </p>
+        <!-- button -->
+        <div class="button__section">
+          <div class="main__button">
+            <button class="first__button"><span>Our Team</span><span class="ml-4"><i
+                  class="fa fa-caret-right"></i></span>
+            </button>
+            <button class="second__button"><span>Our Team</span><span class="ml-4"><i
+                  class="fa fa-caret-right"></i></span>
+            </button>
+          </div>
+
+          <div class="item__button">
+            <button>Careers</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing">
+    <div class="container">
+
+      <div class="pricing__prewords">
+        <span>pricing plan</span>
+        <h1 class="animate__animated animate__slideInUp wow">From getting started</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          In vel varius turpis, non dictum sem. Aenean in efficitur ipsum, in egestas ipsum. Mauris in mi ac tellus.
+        </p>
+      </div>
+
+      <div class="pricing__packages animate__animated animate__slideInUp wow">
+
+        <div class="pricing__packages__inner">
+
+          <div class="business ">
+
+            <div class="row-1">
+              <h3>Small Business</h3>
+              <p>A beautiful, simple website</p>
+
+              <div class="price">
+                <h1>$46<span> /month</span></h1>
+                <select id="">
+                  <option value="1">Yearly</option>
+                  <option value="1">Monthly</option>
+                </select>
+              </div>
+              <!-- button -->
+              <button class="small__biz__button"><span>Get started today</span><span class="ml-4"><i
+                    class="fa fa-caret-right"></i></span>
+              </button>
+
+              <p class="last-p">100% money back guarantee</p>
+            </div>
+
+            <div class="row-2">
+              <ul>
+                <li><i class="fa fa-check text-success"></i>10 Pages Responsive Website</li>
+                <li><i class="fa fa-check text-success"></i>5 PPC Campaigns</li>
+                <li><i class="fa fa-check text-success"></i>10 SEO Keywords</li>
+                <li><i class="fa fa-check text-success"></i>5 Facebook Camplaigns</li>
+                <li><i class="fa fa-check text-success"></i>2 Video Camplaign</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="business">
+            <div class="row-1">
+              <h3>Corporate Business</h3>
+              <p>A beautiful, simple website</p>
+
+              <div class="price">
+                <h1>$199<span>/month</span></h1>
+                <select id="">
+                  <option value="1">Yearly</option>
+                  <option value="1">Monthly</option>
+                </select>
+              </div>
+              <!-- button -->
+              <div class="main__button">
+                <button class="first__button"><span>Get started today</span><span class="ml-4"><i
+                      class="fa fa-caret-right"></i></span>
+                </button>
+                <button class="second__button"><span>Get started today</span><span class="ml-4"><i
+                      class="fa fa-caret-right"></i></span>
+                </button>
+              </div>
+
+              <p class="last-p">100% money back guarantee</p>
+            </div>
+
+            <div class="row-2">
+              <ul>
+                <li><i class="fa fa-check text-success"></i>10 Pages Responsive Website</li>
+                <li><i class="fa fa-check text-success"></i>5 PPC Campaigns</li>
+                <li><i class="fa fa-check text-success"></i>10 SEO Keywords</li>
+                <li><i class="fa fa-check text-success"></i>5 Facebook Camplaigns</li>
+                <li><i class="fa fa-check text-success"></i>2 Video Camplaign</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients">
+    <div class="container">
+      <div class="clients__content__item-1">
+        <span class="topClient">top clients</span>
+        <h1 class="animate__animated animate__slideInUp wow">We’ve built solutions for...</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          Nulla facilisi. Nullam in magna id dolor blandit rutrum eget.
+        </p>
+      </div>
+
+      <div class="clients__content__item-2">
+        <div class="clients__list">
+          <div class="clients__list__item border-1">
+            <img src="./img//keystroke-sass-img26.png" alt="">
+          </div>
+          <div class="clients__list__item border-1 border-5">
+            <img src="./img//keystroke-sass-img27.png" alt="">
+          </div>
+          <div class="clients__list__item border-2">
+            <img src="./img//keystroke-sass-img28.png" alt="">
+          </div>
+          <div class="clients__list__item border-3 border-6">
+            <img src="./img//keystroke-sass-img29.png" alt="">
+          </div>
+          <div class="clients__list__item border-3">
+            <img src="./img//keystroke-sass-img30.png" alt="">
+          </div>
+          <div class="clients__list__item border-4">
+            <img src="./img//keystroke-sass-img31.png" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- STORIES -->
+  <section class="stories">
+    <div class="container">
+      <div class="stories__prewords">
+        <span>what's going on</span>
+        <h1 class="animate__animated animate__slideInUp wow">Latest stories</h1>
+        <p class="animate__animated animate__slideInUp wow">
+          In vel varius turpis, non dictum sem. Aenean in efficitur ipsum, in egestas ipsum. Mauris in mi ac tellus.
+        </p>
+      </div>
+      <div class="stories__list animate__animated animate__slideInUp wow">
+
+        <div class="stories__item ">
+          <div class="stories__photos">
+            <img src="./img/keystroke-sass-img32.jpg" alt="">
+          </div>
+          <div class="wrap__text__box ">
+            <div class="stories__item__text" data-tilt>
+              <div class="text__content">
+                <span>
+                  Lifestyle
+                </span>
+                <h3>
+                  Choosing the right features for your custom
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur rem temporibus autem eveniet
+                  accusantium eum, doloremque ut aut earum!</p>
+              </div>
+            </div>
+          </div>
+          <div class="wrap__text__box-2 d-none">
+            <div class="stories__item__text" data-tilt>
+              <div class="text__content">
+                <span>
+                  Lifestyle
+                </span>
+                <h3>
+                  Choosing the right features for your custom
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur rem temporibus autem eveniet
+                  accusantium eum, doloremque ut aut earum!</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="stories__item ">
+
+          <div class="stories__photos">
+            <img src="./img/keystroke-sass-img33.jpg" alt="">
+          </div>
+
+          <div class="wrap__text__box ">
+            <div class="stories__item__text" data-tilt>
+              <div class="text__content">
+                <span>
+                  Lifestyle
+                </span>
+                <h3>
+                  Choosing the right features for your custom
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur rem temporibus autem eveniet
+                  accusantium eum, doloremque ut aut earum!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="wrap__text__box-2 d-none">
+            <div class="stories__item__text" data-tilt>
+              <div class="text__content">
+                <span>
+                  Lifestyle
+                </span>
+                <h3>
+                  Choosing the right features for your custom
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit pariatur rem temporibus autem eveniet
+                  accusantium eum, doloremque ut aut earum!</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <div class="container">
+      <span>Let's work together</span>
+      <h1 class="animate__animated animate__slideInUp wow">Need a successful project?</h1>
+
+      <div class="main__button animate__animated animate__slideInUp wow">
+        <button class="first__button"><span>Estimate Project</span><span class="ml-4"><i
+              class="fa fa-caret-right"></i></span>
+        </button>
+        <button class="second__button"><span>Estimate Project</span><span class="ml-4"><i
+              class="fa fa-caret-right"></i></span>
+        </button>
+      </div>
+
+      <p class="callus">
+        Or call us now <span><i class="fa fa-phone phone ml-3 mr-2"></i>(123)
+          456 7890</span></i>
+      </p>
+    </div>
+
+    <!-- plugin css ko chèn vì làm mất các font-awesome khác, nên phần này ko chỉnh dc -->
+        <!-- <i class="icon icon-shape-04"></i>
+        <i class="icon icon-shape-05"></i>
+        <i class="icon icon-shape-01"></i>
+        <i class="icon icon-shape-06"></i> -->
+ 
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="map" id="map-bg">
+      <img src="./img/keystroke-sass-img34.png" alt="">
+    </div>
+    <div class="container">
+
+      <div class="social__icons ">
+        <i class="fab fa-facebook-f  i-hover"></i>
+        <i class="fab fa-twitter i-hover"></i>
+        <i class="fab fa-pinterest-p i-hover"></i>
+        <i class="fab fa-linkedin-in i-hover"></i>
+        <i class="fab fa-instagram i-hover"></i>
+        <i class="fab fa-vimeo-v i-hover"></i>
+        <i class="fab fa-dribbble i-hover"></i>
+        <i class="fab fa-behance i-hover"></i>
+      </div>
+
+      <div class="footer__category">
+        <!-- left -->
+        <div class="subscribe">
+          <div class="subscribe__inner__wrap">
+            <h1>Get in touch!</h1>
+            <p>Fusce varius, dolor tempor interdum tristique, dui urnabibendum magna, ut ullamcorper purus</p>
+            <div class="form">
+              <input type="email" placeholder="Email">
+              <!-- button  -->
+              <div class="main__button">
+                <button class="first__button"><span>Subscribe</span><span class="ml-4"><i
+                      class="fa fa-caret-right"></i></span>
+                </button>
+                <button class="second__button"><span>Subscribe</span><span class="ml-4"><i
+                      class="fa fa-caret-right"></i></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="category">
+          <div class="cate-item service">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Logo & Branding</a></li>
+              <li><a href="#">Website Development</a></li>
+              <li><a href="#">Mobile App Development</a></li>
+              <li><a href="#">Search Engine Optimization</a></li>
+              <li><a href="#">Pay-Per-Click</a></li>
+              <li><a href="#">Social Media Marketing</a></li>
+            </ul>
+          </div>
+
+          <div class="cate-item">
+            <h4>Resourses</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Case Studies</a></li>
+              <li><a href="#">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="cate-item">
+            <h4>Support
+            </h4>
+            <ul>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Sitemap</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        <p>© 2021. All rights reserved by Your Company.</p>
+
+        <div class="policy">
+          <p>Privacy Policy</p>
+          <p>Terms of Use</p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div id="moveToTop" class="toTop" onclick='moveTop()'>
+    <div class="top__content">
+      <i class="fa fa-caret-up"></i>
+      <span>top</span>
+    </div>
+  </div>
+
+
+  <div class="darkMode d-inline">
+    <input type="checkbox" id="switch" name="theme" class="d-none" />
+
+    <div class="light " id="setLight">
+      <label for="switch" class="sun bg-dark">
+        <img src="./img/keystroke-sass-img1.png" alt="">
+      </label>
+      <label for="switch" class="ml-1 mb-0">LIGHT</label>
+    </div>
+
+    <div class="dark" id="setDark">
+      <label for="switch" class="moon  bg-light ">
+
+        <img src="./img/keystroke-sass-img02.png" alt="">
+      </label>
+
+      <label for="switch" class="ml-2 mb-0">DARK</label>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="./js/index.js"></script>
+  <script src="./js/move.js"></script>
+  <script src="./js/darkMode.js"></script>
+
+  <!-- BST  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+    crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- waypoint  -->
+  <script integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+    crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <!-- count up  -->
+  <script src="./js/jquery.countup.js"></script>
+  <script>
+    $(".counter").countUp();
+  </script>
+  <!-- wow -->
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
+
+</html>
