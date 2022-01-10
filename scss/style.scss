@@ -34,7 +34,7 @@
   }
 }
 
-
+//for darkmode
 html {
   --bg-main: #ffffff;
   --bg-sub: #fafafb;
@@ -48,6 +48,7 @@ html {
   --span-bg-orange: #fff3ee;
   --span-bg-purple: #ede4fc;
 }
+
 
 html[data-theme="dark"] {
   --bg-main: #18191a;
